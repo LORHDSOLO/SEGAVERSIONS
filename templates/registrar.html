@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Registrar Audiencia</title>
+</head>
+<body>
+    <header>
+        <h1>Registrar Audiencia</h1>
+    </header>
+    <form method="POST" action="{{ url_for('registrar_audiencia') }}">
+        <label for="numero_carpeta">Número de Carpeta:</label>
+        <input type="text" id="numero_carpeta" name="numero_carpeta" required>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required>
+
+        <label for="numero_sala">Número de Sala:</label>
+        <input type="text" id="numero_sala" name="numero_sala" required>
+
+        <label for="modalidad">Modalidad:</label>
+        <select id="modalidad" name="modalidad" required>
+            <option value="Presencial">Presencial</option>
+            <option value="Virtual">Virtual</option>
+        </select>
+
+        <label for="hora_inicio">Hora de Inicio:</label>
+        <input type="time" id="hora_inicio" name="hora_inicio" required>
+
+        <label for="numero_consolidacion">Número de Consolidación:</label>
+        <input type="text" id="numero_consolidacion" name="numero_consolidacion" required>
+
+        <label for="participante">Participantes:</label>
+        <input type="text" id="participante" name="participante" required>
+        <button type="button" id="agregar-participante">Agregar Otro Participante</button>
+
+        <div id="lista-participantes"></div>
+
+        <button type="submit">Registrar</button>
+    </form>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

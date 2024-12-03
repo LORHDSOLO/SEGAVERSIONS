@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Solicitar Copia</title>
+</head>
+<body>
+    <header>
+        <h1>Solicitar Copia de Audiencia</h1>
+    </header>
+    <form method="POST" action="{{ url_for('solicitar_copia') }}">
+        <label for="participante_id">ID del Participante:</label>
+        <input type="text" id="participante_id" name="participante_id" required>
+
+        <label for="audiencia_id">ID de la Audiencia:</label>
+        <input type="text" id="audiencia_id" name="audiencia_id" required>
+
+        <button type="submit">Solicitar Copia</button>
+    </form>
+</body>
+</html>
